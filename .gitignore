@@ -1,2 +1,4 @@
 
 \.vagrant/machines/default/virtualbox/
+
+*.log

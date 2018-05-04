@@ -8,10 +8,13 @@
 Vagrant.configure("2") do |config|
 
   # Installs Ubuntu 12.04 (32 Bit)
-  # config.vm.box = "ubuntu/precise32"
+  config.vm.box = "ubuntu/precise32"
 
   # Installs Ubuntu 14.04 (32 Bit)
-  config.vm.box = "ubuntu/trusty32"
+  # config.vm.box = "ubuntu/trusty32"
+
+  # Installs Ubuntu 16.04 (32 Bit)
+  # config.vm.box = "ubuntu/xenial32"
 
   config.vm.provision "file", source: "setup.sh", destination: "~/setup.sh"
 end

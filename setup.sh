@@ -106,7 +106,12 @@ fi
 echo "Updating packages..."
 apt-get update
 echo "Installing PHP CGI binaries..."
-apt-get install php5-cgi -y
+system_version=$(uname -a)
+if [[ $system_version = *"xenial"* ]]; then
+    apt-get install php5.6 -y
+else
+    apt-get install php5-cgi -y
+fi
 php5_cgi_result=$?
 if [ "$php5_cgi_result" -eq "0" ]; then
     echo "Install of php5-cgi successful."
